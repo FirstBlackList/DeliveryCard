@@ -80,10 +80,10 @@ public class ComplexElementsDeliveryCardTest extends PreparingForTests {
         }
         int countDay = $$x("//table[@class='calendar__layout']").size();
         for (int i = 0; i < countDay; i++) {
-            String text = $$x("//table[@class='calendar__layout']//td[@data-day='1685998800000']")
+            String text = $$x("//table[@class='calendar__layout']//tr[@class='calendar__row']//td[@data-day='1685998800000']")
                     .get(i).getText();
             if (text.equalsIgnoreCase("6")) {
-                $$x("//table[@class='calendar__layout']//td[@data-day='1685998800000']").get(i).click();
+                $$x("//table[@class='calendar__layout']//tr[@class='calendar__row']//td[@data-day='1685998800000']").get(i).click();
             }
         }
         SelenideElement day = $x("//td[@data-day='1685998800000']");
