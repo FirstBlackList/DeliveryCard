@@ -20,7 +20,7 @@ public class NegativeDeliveryCardTest extends PreparingForTests {
         $x("//label[@data-test-id='agreement']").click();
         $(".button").click();
         $x("//span[contains(text(),'дату невозможен')]")
-                .shouldBe(visible, Duration.ofSeconds(8))
+                .shouldBe(visible, Duration.ofSeconds(4))
                 .should(exactText("Заказ на выбранную дату невозможен"));
     }
 
@@ -35,7 +35,7 @@ public class NegativeDeliveryCardTest extends PreparingForTests {
         $x("//label[@data-test-id='agreement']").click();
         $(".button").click();
         $x("//span[contains(text(),'город недоступна')]")
-                .shouldBe(visible, Duration.ofSeconds(8))
+                .shouldBe(visible, Duration.ofSeconds(4))
                 .should(exactText("Доставка в выбранный город недоступна"));
     }
 
@@ -50,14 +50,14 @@ public class NegativeDeliveryCardTest extends PreparingForTests {
         $x("//label[@data-test-id='agreement']").click();
         $(".button").click();
         $x("//span[contains(text(),'город недоступна')]")
-                .shouldBe(visible, Duration.ofSeconds(8))
+                .shouldBe(visible, Duration.ofSeconds(4))
                 .should(exactText("Доставка в выбранный город недоступна"));
     }
 
     @Test
     void NegativeDeliveryCardTestCityNotSelected() {
 
-        $x("//span[@data-test-id='city']//input[@placeholder='Город']").clear();
+        $x("//span[@data-test-id='city']//input[@placeholder='Город']").setValue("");
         String setDate = setDateDeliveryCard(8);
         $x("//span[@data-test-id='date']//input[@placeholder='Дата встречи']").doubleClick().sendKeys(setDate);
         $x("//span[@data-test-id='name']//input[@name='name']").setValue("Иванов Иван");
@@ -65,7 +65,7 @@ public class NegativeDeliveryCardTest extends PreparingForTests {
         $x("//label[@data-test-id='agreement']").click();
         $(".button").click();
         $x("//span[contains(text(),'обязательно для')]")
-                .shouldBe(visible, Duration.ofSeconds(8))
+                .shouldBe(visible, Duration.ofSeconds(4))
                 .should(exactText("Поле обязательно для заполнения"));
     }
 
@@ -75,12 +75,12 @@ public class NegativeDeliveryCardTest extends PreparingForTests {
         $x("//span[@data-test-id='city']//input[@placeholder='Город']").setValue("Нижний Новгород");
         String setDate = setDateDeliveryCard(8);
         $x("//span[@data-test-id='date']//input[@placeholder='Дата встречи']").doubleClick().sendKeys(setDate);
-        $x("//span[@data-test-id='name']//input[@name='name']").clear();
+        $x("//span[@data-test-id='name']//input[@name='name']").setValue("");
         $x("//span[@data-test-id='phone']//input[@name='phone']").setValue("+71234567890");
         $x("//label[@data-test-id='agreement']").click();
         $(".button").click();
         $x("//span[contains(text(),'обязательно для')]")
-                .shouldBe(visible, Duration.ofSeconds(8))
+                .shouldBe(visible, Duration.ofSeconds(4))
                 .should(exactText("Поле обязательно для заполнения"));
     }
 
@@ -95,7 +95,7 @@ public class NegativeDeliveryCardTest extends PreparingForTests {
         $x("//label[@data-test-id='agreement']").click();
         $(".button").click();
         $x("//span[contains(text(),'указаные неверно')]")
-                .shouldBe(visible, Duration.ofSeconds(8))
+                .shouldBe(visible, Duration.ofSeconds(4))
                 .should(exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы."));
     }
 
@@ -110,7 +110,7 @@ public class NegativeDeliveryCardTest extends PreparingForTests {
         $x("//label[@data-test-id='agreement']").click();
         $(".button").click();
         $x("//span[contains(text(),'Телефон указан неверно')]")
-                .shouldBe(visible, Duration.ofSeconds(8))
+                .shouldBe(visible, Duration.ofSeconds(4))
                 .should(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678."));
     }
 
@@ -125,7 +125,7 @@ public class NegativeDeliveryCardTest extends PreparingForTests {
         $x("//label[@data-test-id='agreement']").click();
         $(".button").click();
         $x("//span[contains(text(),'Телефон указан неверно')]")
-                .shouldBe(visible, Duration.ofSeconds(8))
+                .shouldBe(visible, Duration.ofSeconds(4))
                 .should(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678."));
     }
 
