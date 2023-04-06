@@ -1,4 +1,4 @@
-/*package ru.netilogy.deliverycard;
+package ru.netilogy.deliverycard;
 
 import org.junit.jupiter.api.Test;
 
@@ -144,4 +144,4 @@ public class NegativeDeliveryCardTest extends PreparingForTests {
                         , cssClass("input_invalid"));
     }
 
-}*/
+}

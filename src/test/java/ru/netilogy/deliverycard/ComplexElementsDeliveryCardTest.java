@@ -71,22 +71,22 @@ public class ComplexElementsDeliveryCardTest extends PreparingForTests {
     }
 
     @Test
-    void HappyTestDeliveryCardCalendar__6_06_2023() {
+    void HappyTestDeliveryCardCalendar__16_04_2023() {
 
         $x("//span[@data-test-id='city']//input[@placeholder='Город']").setValue("Нижний Новгород");
         $x("//span[contains(@class,'icon_name_calendar')]").click();
-        while (!$x("//div[contains(@class,'calendar__name')]").getText().contains("Июнь 2023")) {
+        /*while (!$x("//div[contains(@class,'calendar__name')]").getText().contains("Июнь 2023")) {
             $x("//div[contains(@class,'arrow_direction_right')][@data-step='1']").click();
-        }
+        }*/
         int countDay = $$x("//table[@class='calendar__layout']").size();
         for (int i = 0; i < countDay; i++) {
-            String text = $$x("//td[text()='6']")
+            String text = $$x("//td[text()='16']")
                     .get(i).getText();
-            if (text.equalsIgnoreCase("6")) {
-                $$x("//td[text()='6']").get(i).click();
+            if (text.equalsIgnoreCase("16")) {
+                $$x("//td[text()='16']").get(i).click();
             }
         }
-        SelenideElement day = $x("//td[@data-day='1685998800000']");
+        SelenideElement day = $x("//td[text()='16']");
         $x("//span[@data-test-id='name']//input[@name='name']").setValue("Иванов Иван");
         $x("//span[@data-test-id='phone']//input[@name='phone']").setValue("+71234567890");
         $x("//label[@data-test-id='agreement']").click();
