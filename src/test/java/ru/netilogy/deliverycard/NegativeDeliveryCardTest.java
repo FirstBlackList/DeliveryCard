@@ -10,10 +10,10 @@ import static com.codeborne.selenide.Selenide.*;
 public class NegativeDeliveryCardTest extends PreparingForTests {
 
     @Test
-    void NegativeDeliveryCardTestInvalidDate() {
+    void shouldInvalidDate() {
 
         $x("//span[@data-test-id='city']//input[@placeholder='Город']").setValue("Нижний Новгород");
-        String setDate = setDateDeliveryCard(0);
+        String setDate = setDateDeliveryCard(0, "dd.MM.yyyy");
         $x("//span[@data-test-id='date']//input[@placeholder='Дата встречи']").doubleClick().sendKeys(setDate);
         $x("//span[@data-test-id='name']//input[@name='name']").setValue("Иванов Иван");
         $x("//span[@data-test-id='phone']//input[@name='phone']").setValue("+71234567890");
@@ -25,10 +25,10 @@ public class NegativeDeliveryCardTest extends PreparingForTests {
     }
 
     @Test
-    void NegativeDeliveryCardTestIncorrectlySelectedCity() {
+    void shouldIncorrectlySelectedCity() {
 
         $x("//span[@data-test-id='city']//input[@placeholder='Город']").setValue("Нижний");
-        String setDate = setDateDeliveryCard(8);
+        String setDate = setDateDeliveryCard(8, "dd.MM.yyyy");
         $x("//span[@data-test-id='date']//input[@placeholder='Дата встречи']").doubleClick().sendKeys(setDate);
         $x("//span[@data-test-id='name']//input[@name='name']").setValue("Иванов Иван");
         $x("//span[@data-test-id='phone']//input[@name='phone']").setValue("+71234567890");
@@ -40,10 +40,10 @@ public class NegativeDeliveryCardTest extends PreparingForTests {
     }
 
     @Test
-    void NegativeDeliveryCardTestIncorrectlySelectedCity_2() {
+    void shouldIncorrectlySelectedCity_2() {
 
         $x("//span[@data-test-id='city']//input[@placeholder='Город']").setValue("Moscow");
-        String setDate = setDateDeliveryCard(8);
+        String setDate = setDateDeliveryCard(8, "dd.MM.yyyy");
         $x("//span[@data-test-id='date']//input[@placeholder='Дата встречи']").doubleClick().sendKeys(setDate);
         $x("//span[@data-test-id='name']//input[@name='name']").setValue("Иванов Иван");
         $x("//span[@data-test-id='phone']//input[@name='phone']").setValue("+71234567890");
@@ -55,10 +55,10 @@ public class NegativeDeliveryCardTest extends PreparingForTests {
     }
 
     @Test
-    void NegativeDeliveryCardTestCityNotSelected() {
+    void shouldCityNotSelected() {
 
         $x("//span[@data-test-id='city']//input[@placeholder='Город']").setValue("");
-        String setDate = setDateDeliveryCard(8);
+        String setDate = setDateDeliveryCard(8, "dd.MM.yyyy");
         $x("//span[@data-test-id='date']//input[@placeholder='Дата встречи']").doubleClick().sendKeys(setDate);
         $x("//span[@data-test-id='name']//input[@name='name']").setValue("Иванов Иван");
         $x("//span[@data-test-id='phone']//input[@name='phone']").setValue("+71234567890");
@@ -70,10 +70,10 @@ public class NegativeDeliveryCardTest extends PreparingForTests {
     }
 
     @Test
-    void NegativeDeliveryCardTestNameNotSelected() {
+    void shouldNameNotSelected() {
 
         $x("//span[@data-test-id='city']//input[@placeholder='Город']").setValue("Нижний Новгород");
-        String setDate = setDateDeliveryCard(8);
+        String setDate = setDateDeliveryCard(8, "dd.MM.yyyy");
         $x("//span[@data-test-id='date']//input[@placeholder='Дата встречи']").doubleClick().sendKeys(setDate);
         $x("//span[@data-test-id='name']//input[@name='name']").setValue("");
         $x("//span[@data-test-id='phone']//input[@name='phone']").setValue("+71234567890");
@@ -85,10 +85,10 @@ public class NegativeDeliveryCardTest extends PreparingForTests {
     }
 
     @Test
-    void NegativeDeliveryCardTestNameIncorrect() {
+    void shouldNameIncorrect() {
 
         $x("//span[@data-test-id='city']//input[@placeholder='Город']").setValue("Нижний Новгород");
-        String setDate = setDateDeliveryCard(8);
+        String setDate = setDateDeliveryCard(8, "dd.MM.yyyy");
         $x("//span[@data-test-id='date']//input[@placeholder='Дата встречи']").doubleClick().sendKeys(setDate);
         $x("//span[@data-test-id='name']//input[@name='name']").setValue("Ivanov Ivan");
         $x("//span[@data-test-id='phone']//input[@name='phone']").setValue("+71234567890");
@@ -100,10 +100,10 @@ public class NegativeDeliveryCardTest extends PreparingForTests {
     }
 
     @Test
-    void NegativeDeliveryCardTestPhoneNumberIsSpecifiedIncorrectly() {
+    void shouldPhoneNumberIsSpecifiedIncorrectly() {
 
         $x("//span[@data-test-id='city']//input[@placeholder='Город']").setValue("Нижний Новгород");
-        String setDate = setDateDeliveryCard(8);
+        String setDate = setDateDeliveryCard(8, "dd.MM.yyyy");
         $x("//span[@data-test-id='date']//input[@placeholder='Дата встречи']").doubleClick().sendKeys(setDate);
         $x("//span[@data-test-id='name']//input[@name='name']").setValue("Иванов Иван");
         $x("//span[@data-test-id='phone']//input[@name='phone']").setValue("+71234567890123");
@@ -115,10 +115,10 @@ public class NegativeDeliveryCardTest extends PreparingForTests {
     }
 
     @Test
-    void NegativeDeliveryCardTestPhoneNumberIsSpecifiedIncorrectly_2() {
+    void shouldPhoneNumberIsSpecifiedIncorrectly_2() {
 
         $x("//span[@data-test-id='city']//input[@placeholder='Город']").setValue("Нижний Новгород");
-        String setDate = setDateDeliveryCard(8);
+        String setDate = setDateDeliveryCard(8, "dd.MM.yyyy");
         $x("//span[@data-test-id='date']//input[@placeholder='Дата встречи']").doubleClick().sendKeys(setDate);
         $x("//span[@data-test-id='name']//input[@name='name']").setValue("Иванов Иван");
         $x("//span[@data-test-id='phone']//input[@name='phone']").setValue("89123456789");
@@ -130,10 +130,10 @@ public class NegativeDeliveryCardTest extends PreparingForTests {
     }
 
     @Test
-    void NegativeDeliveryCardTestCheckBoxIsNotPressed() {
+    void shouldCheckBoxIsNotPressed() {
 
         $x("//span[@data-test-id='city']//input[@placeholder='Город']").setValue("Нижний Новгород");
-        String setDate = setDateDeliveryCard(3);
+        String setDate = setDateDeliveryCard(3, "dd.MM.yyyy");
         $x("//span[@data-test-id='date']//input[@placeholder='Дата встречи']").doubleClick().sendKeys(setDate);
         $x("//span[@data-test-id='name']//input[@name='name']").setValue("Иванов Иван");
         $x("//span[@data-test-id='phone']//input[@name='phone']").setValue("+71234567890");
