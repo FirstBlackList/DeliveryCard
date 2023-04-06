@@ -1,5 +1,6 @@
 package ru.netilogy.deliverycard;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.BeforeAll;
@@ -42,6 +43,9 @@ public class PreparingForTests {
 
     @BeforeEach
     void setUp() {
+        Configuration.holdBrowserOpen = true;
+        Configuration.browserSize = "1920x1080";
+
         open("http://localhost:9999");
     }
 
