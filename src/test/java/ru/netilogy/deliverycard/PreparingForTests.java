@@ -43,7 +43,7 @@ public class PreparingForTests {
 
     @BeforeEach
     void setUp() {
-        Configuration.holdBrowserOpen = true;
+        Configuration.headless = true;
         Configuration.browserSize = "800x600";
 
         open("http://localhost:9999");
