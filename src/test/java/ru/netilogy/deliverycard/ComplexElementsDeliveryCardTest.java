@@ -78,8 +78,7 @@ public class ComplexElementsDeliveryCardTest extends PreparingForTests {
         while (!$x("//div[contains(@class,'calendar__name')]").getText().contains("Июнь 2023")) {
             $x("//div[contains(@class,'arrow_direction_right')][@data-step='1']").click();
         }
-        SelenideElement day = $x("//table[@class='calendar__layout']//td[@data-day='1685998800000']");
-        int countDay = $$x("//table[@class='calendar__layout']//td[@data-day='1685998800000']").size();
+        int countDay = $$x("//table[@class='calendar__layout']").size();
         for (int i = 0; i < countDay; i++) {
             String text = $$x("//table[@class='calendar__layout']//td[@data-day='1685998800000']")
                     .get(i).getText();
@@ -87,6 +86,7 @@ public class ComplexElementsDeliveryCardTest extends PreparingForTests {
                 $$x("//table[@class='calendar__layout']//td[@data-day='1685998800000']").get(i).click();
             }
         }
+        SelenideElement day = $x("//td[@data-day='1685998800000']");
         $x("//span[@data-test-id='name']//input[@name='name']").setValue("Иванов Иван");
         $x("//span[@data-test-id='phone']//input[@name='phone']").setValue("+71234567890");
         $x("//label[@data-test-id='agreement']").click();
