@@ -1,4 +1,4 @@
-/*package ru.netilogy.deliverycard;
+package ru.netilogy.deliverycard;
 
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Test;
@@ -100,4 +100,4 @@ public class ComplexElementsDeliveryCardTest extends PreparingForTests {
                         , Duration.ofSeconds(12)).shouldBe(visible);
     }
 
-}*/
+}
