@@ -44,7 +44,7 @@ public class PreparingForTests {
     @BeforeEach
     void setUp() {
         Configuration.holdBrowserOpen = true;
-        Configuration.browserSize = "1920x1080";
+        Configuration.browserSize = "800x600";
 
         open("http://localhost:9999");
     }
