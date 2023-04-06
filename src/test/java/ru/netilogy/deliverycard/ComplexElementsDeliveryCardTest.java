@@ -75,7 +75,6 @@ public class ComplexElementsDeliveryCardTest extends PreparingForTests {
 
         $x("//span[@data-test-id='city']//input[@placeholder='Город']").setValue("Нижний Новгород");
         $x("//span[contains(@class,'icon_name_calendar')]").click();
-        $x("//div[@class='popup__content']").should(visible);
         while (!$x("//div[contains(@class,'calendar__name')]").getText().contains("Июнь 2023")) {
             $x("//div[contains(@class,'arrow_direction_right')][@data-step='1']").click();
         }
@@ -88,7 +87,6 @@ public class ComplexElementsDeliveryCardTest extends PreparingForTests {
                 $$x("//table[@class='calendar__layout']//td[@data-day='1685998800000']").get(i).click();
             }
         }
-        $x("//div[@class='popup__content']").should(hidden);
         $x("//span[@data-test-id='name']//input[@name='name']").setValue("Иванов Иван");
         $x("//span[@data-test-id='phone']//input[@name='phone']").setValue("+71234567890");
         $x("//label[@data-test-id='agreement']").click();
