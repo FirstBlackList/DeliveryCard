@@ -1,6 +1,8 @@
 package ru.netilogy.deliverycard;
 
 import com.codeborne.selenide.SelenideElement;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.Keys;
 
@@ -31,6 +33,11 @@ public class PreparingForTests {
             clearDate();
             return dateFormat.format(calendar.getTime());
         }
+    }
+
+    @BeforeAll
+    static void setUpAll() {
+        WebDriverManager.chromedriver().setup();
     }
 
     @BeforeEach
