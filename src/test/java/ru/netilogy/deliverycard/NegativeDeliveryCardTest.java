@@ -36,7 +36,7 @@ public class NegativeDeliveryCardTest extends PreparingForTests {
         $(".button").click();
         $x("//span[contains(text(),'город недоступна')]")
                 .shouldBe(visible, Duration.ofSeconds(4))
-                .should(exactText("Доставка в выбранный город недоступна"));
+                .should(exactText("Доставка в выбранный город недоступна"), visible);
     }
 
     @Test
@@ -51,7 +51,7 @@ public class NegativeDeliveryCardTest extends PreparingForTests {
         $(".button").click();
         $x("//span[contains(text(),'город недоступна')]")
                 .shouldBe(visible, Duration.ofSeconds(4))
-                .should(exactText("Доставка в выбранный город недоступна"));
+                .should(exactText("Доставка в выбранный город недоступна"), visible);
     }
 
     @Test
@@ -66,7 +66,7 @@ public class NegativeDeliveryCardTest extends PreparingForTests {
         $(".button").click();
         $x("//span[contains(text(),'обязательно для')]")
                 .shouldBe(visible, Duration.ofSeconds(4))
-                .should(exactText("Поле обязательно для заполнения"));
+                .should(exactText("Поле обязательно для заполнения"), visible);
     }
 
     @Test
@@ -81,7 +81,7 @@ public class NegativeDeliveryCardTest extends PreparingForTests {
         $(".button").click();
         $x("//span[contains(text(),'обязательно для')]")
                 .shouldBe(visible, Duration.ofSeconds(4))
-                .should(exactText("Поле обязательно для заполнения"));
+                .should(exactText("Поле обязательно для заполнения"), visible);
     }
 
     @Test
@@ -96,7 +96,7 @@ public class NegativeDeliveryCardTest extends PreparingForTests {
         $(".button").click();
         $x("//span[contains(text(),'указаные неверно')]")
                 .shouldBe(visible, Duration.ofSeconds(4))
-                .should(exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы."));
+                .should(exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы."), visible);
     }
 
     @Test
@@ -111,7 +111,7 @@ public class NegativeDeliveryCardTest extends PreparingForTests {
         $(".button").click();
         $x("//span[contains(text(),'Телефон указан неверно')]")
                 .shouldBe(visible, Duration.ofSeconds(4))
-                .should(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678."));
+                .should(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678."), visible);
     }
 
     @Test
@@ -126,7 +126,7 @@ public class NegativeDeliveryCardTest extends PreparingForTests {
         $(".button").click();
         $x("//span[contains(text(),'Телефон указан неверно')]")
                 .shouldBe(visible, Duration.ofSeconds(4))
-                .should(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678."));
+                .should(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678."), visible);
     }
 
     @Test
@@ -141,7 +141,7 @@ public class NegativeDeliveryCardTest extends PreparingForTests {
         $x("//label[contains(@class, 'checkbox')]")
                 .shouldBe(visible)
                 .shouldHave(cssValue("color", "rgba(255, 92, 92, 1)")
-                        , cssClass("input_invalid"));
+                        , cssClass("input_invalid"), visible);
     }
 
 }
