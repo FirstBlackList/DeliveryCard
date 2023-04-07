@@ -13,7 +13,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class PreparingForTests {
 
     public static String setDateDeliveryCard(long addDays, String pattern) {
-        $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT,Keys.HOME), Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         return LocalDate.now().plusDays(addDays).format(DateTimeFormatter.ofPattern(pattern));
     }
 
